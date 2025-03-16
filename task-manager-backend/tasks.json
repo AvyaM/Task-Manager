@@ -1,0 +1,58 @@
+[
+    {
+        "id": 6,
+        "title": "Read a book",
+        "description": "Finish reading 'Atomic Habits'",
+        "priority": "low",
+        "dueDate": "2025-03-20",
+        "completed": true
+    },
+    {
+        "id": 8,
+        "title": "Fix bugs in project ",
+        "description": "Resolve React state issues",
+        "priority": "high",
+        "dueDate": "2025-03-14",
+        "completed": true
+    },
+    {
+        "id": 9,
+        "title": "Watch tutorial",
+        "description": "Learn about FastAPI deployment",
+        "priority": "medium",
+        "dueDate": "2025-03-13",
+        "completed": true
+    },
+    {
+        "id": 10,
+        "title": "Submit assignment",
+        "description": "Upload the distributed systems assignment",
+        "priority": "low",
+        "dueDate": "2025-03-17",
+        "completed": false
+    },
+    {
+        "id": 14,
+        "title": "Pay bills",
+        "description": "Electricity, water, and internet bills",
+        "priority": "high",
+        "dueDate": "2025-03-10",
+        "completed": false
+    },
+    {
+        "id": 15,
+        "title": "Hi",
+        "description": "",
+        "priority": "low",
+        "dueDate": "2025-03-16",
+        "completed": false
+    },
+    {
+        "id": 20,
+        "title": "Hey",
+        "description": "string",
+        "priority": "low",
+        "dueDate": "13/03/2025",
+        "completed": false
+    }
+]

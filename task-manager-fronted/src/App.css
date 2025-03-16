@@ -1,0 +1,115 @@
+/* App.css */
+
+/* Overall app layout */
+.App {
+  display: flex;
+  height: 100vh;
+  /* background-image: url('/src/taskManagerbg.jpg'); */
+  background-color: #f4e1c6  
+}
+
+/* Navbar (on the left) */
+.navbar {
+  width: 200px;
+
+  color: white;
+  padding-top: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  position: fixed;
+}
+
+/* Main content area */
+.content {
+  flex-grow: 1;
+  margin-left: 220px; /* Pushes the content to the right of the navbar */
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Task Manager heading */
+.app-heading {
+  font-size: 54px;
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+  color: black;
+  margin-top: 20px; /* Space between the heading and task lists */
+  margin-bottom: 5px; /* Space between heading and task lists */
+}
+
+/* Main content container for task lists */
+.main-content {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  width: 100%;
+  margin-top: 5px; /* Gap between heading and task lists */
+}
+
+/* Styling for Task List (if you have a separate TaskList.css) */
+.list-container {
+  width: 360px;
+  background-color: #f4f4f9;
+  border-radius: 10px;
+  padding: 20px;
+  box-sizing: border-box;
+  margin-top: 30px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.list-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.list-header p {
+  font-size: 18px;
+  color: #333;
+  margin: 0;
+}
+
+.task-list {
+  margin-top: 20px;
+}
+
+.add-task-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;  
+  background-color: #5a7bb0; 
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.add-task-button:hover {
+  background-color: #94a9ca;
+  transform: scale(1.05);
+}
+
+.add-task-button:active {
+  transform: scale(0.95);
+}
+
+.add-task-button-icon {
+  color: white;
+  font-size: 24px;
+}
+

@@ -1,0 +1,37 @@
+/* TaskList.css */
+
+/* Task List container */
+.list-container {
+    width: 360px;
+    height: 840px;
+    background-color: #f5f7fa;
+    border-radius: 10px;
+    padding: 20px;
+    box-sizing: border-box;
+    margin: 24px;
+  }
+  
+  /* Header Section */
+  .list-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .list-header p {
+    font-family: 'Poppins';
+    font-size: 18px;
+    color: #333;
+    margin: 0;
+  }
+  
+  .icons {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+  }
+  
+  .plus-icon, .three-dots {
+    cursor: pointer;
+    font-size: 15px;
+  }

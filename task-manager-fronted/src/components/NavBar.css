@@ -1,0 +1,99 @@
+/* NavBar Container */
+.navbar {
+  width: 200px;
+  background-color: #94a9ca;
+  color: black;
+  height: 100vh;
+  padding-top: 20px;
+  padding-left: 20px;
+  display: flex;
+  flex-direction: column;
+  transition: width 0.3s ease-in-out;
+}
+
+/* Collapsed Sidebar */
+.navbar.collapsed {
+  width: 60px;
+  padding-left: 10px;
+}
+
+/* Header Section */
+.navbar-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+/* Sidebar Icon */
+.navbar-icon {
+  color: black;
+  font-size: 30px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+/* Hide Title when Collapsed */
+.navbar-title {
+  font-size: 24px;
+  font-weight: bold;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.navbar.collapsed .navbar-title {
+  opacity: 0;
+  width: 0;
+  overflow: hidden;
+}
+
+/* Sidebar Links */
+.navbar-links {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Hide Links in Collapsed Mode */
+.navbar.collapsed .navbar-links span {
+  display: none;
+}
+
+/* Sidebar Items */
+.navbar-item {
+  display: flex;
+  align-items: center;
+  padding: 12px;
+  margin: 10px 0;
+  cursor: pointer;
+  color: black;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  border-radius: 8px;
+  text-decoration: none;
+}
+
+/* Sidebar Item Icons */
+.navbar-link-icon {
+  font-size: 20px;
+  margin-right: 12px;
+  transition: color 0.3s ease;
+}
+
+/* Hover Effect */
+.navbar-item:hover {
+  background-color: #588de2;
+  color: white;
+}
+
+/* Active Item */
+.navbar-item.active {
+  background-color: #4f80ce;
+  color: white;
+}
+
+.navbar-item.active .navbar-link-icon {
+  color: white;
+}
+
+/* Ensure Icons Always Show in Collapsed Mode */
+.navbar.collapsed .navbar-link-icon {
+  margin-right: 0;
+  font-size: 24px;
+}
