@@ -7,7 +7,7 @@ import './NavBar.css';  // Import the updated CSS file
 
 function NavBar({ onAddTask }) {
   const [activeItem, setActiveItem] = useState('home');
-  const [isOpen, setIsOpen] = useState(false);  // Toggle menu state
+  const [isOpen, setIsOpen] = useState(true);  // Toggle menu state
 
   const handleClick = (item) => {
     setActiveItem(item);

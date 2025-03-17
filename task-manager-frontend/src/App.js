@@ -14,7 +14,7 @@ function App() {
 
   // Fetch tasks from FastAPI when component mounts
   const fetchTasks = () => {
-    fetch( `${process.env.REACT_APP_API_URL}/tasks`)
+    fetch( `${process.env.REACT_APP_API_URL_LOCAL}/tasks`)
       .then(response => response.json())
       .then(data => setTasks(data))
       .catch(error => alert("Error fetching tasks:", error));
@@ -41,7 +41,7 @@ function App() {
     const newId = tasks.length > 0 ? Math.max(...tasks.map(task => task.id)) + 1 : 1;
     const taskToSend = { ...newTask, id: newId, completed: false };
     
-    fetch(`${process.env.REACT_APP_API_URL}/tasks`, {
+    fetch(`${process.env.REACT_APP_API_URL_LOCAL}/tasks`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(taskToSend)
@@ -59,7 +59,7 @@ function App() {
     const task = tasks.find(t => t.id === taskId);
     if (!task) return;
     const updatedTask = { ...task, completed: !task.completed };
-    fetch(`${process.env.REACT_APP_API_URL}/tasks/${taskId}`, {
+    fetch(`${process.env.REACT_APP_API_URL_LOCAL}/tasks/${taskId}`, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(updatedTask)
@@ -73,18 +73,19 @@ function App() {
 
   // Delete task using FastAPI DELETE endpoint
   const handleDelete = (taskId) => {
-    fetch(`${process.env.REACT_APP_API_URL}/tasks/${taskId}`, {
+    fetch(`${process.env.REACT_APP_API_URL_LOCAL}/tasks/${taskId}`, {
       method: "DELETE",
     })
       .then(() => {
         setTasks(prevTasks => prevTasks.filter(t => t.id !== taskId));
       })
       .catch(error => alert("Error deleting task:", error));
+      alert("Delete Successfully")
   };
 
   // Save edited task via FastAPI PUT endpoint
   const handleSaveEditedTask = (updatedTask) => {
-    fetch(`${process.env.REACT_APP_API_URL}/tasks/${updatedTask.id}`, {
+    fetch(`${process.env.REACT_APP_API_URL_LOCAL}/tasks/${updatedTask.id}`, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(updatedTask)
@@ -95,6 +96,8 @@ function App() {
         setSelectedTask(null);
       })
       .catch(error => alert("Error editing task:", error));
+
+      alert("Edit Successfully")
   };
 
   // Date calculations for filtering tasks

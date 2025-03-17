@@ -1,82 +1,82 @@
 [
     {
         "id": 1,
-        "title": "Fix React state issues",
-        "description": "Investigate and resolve state management problems in the project.",
+        "title": "Fix issues",
+        "description": "resolve problems in the project.",
         "priority": "high",
         "dueDate": "2025-03-14",
         "completed": false
     },
     {
         "id": 2,
-        "title": "Implement UI components",
-        "description": "Develop and style key UI components using React and Tailwind CSS.",
+        "title": "Implement UI",
+        "description": "style UI components ",
         "priority": "medium",
         "dueDate": "2025-03-18",
         "completed": false
     },
     {
         "id": 3,
-        "title": "Set up FastAPI backend",
-        "description": "Create API endpoints for authentication and data handling.",
+        "title": "backend",
+        "description": "Create API endpoints ",
         "priority": "high",
         "dueDate": "2025-03-20",
         "completed": false
     },
     {
-        "id": 4,
-        "title": "Write unit tests",
-        "description": "Ensure backend and frontend functions have proper test coverage.",
-        "priority": "medium",
-        "dueDate": "2025-03-22",
-        "completed": false
-    },
-    {
         "id": 5,
-        "title": "Fix CORS issues",
-        "description": "Resolve cross-origin request issues between React and FastAPI.",
-        "priority": "high",
+        "title": "ChangeBackground",
+        "description": "make the bakground better",
+        "priority": "medium",
         "dueDate": "2025-03-15",
         "completed": false
     },
     {
         "id": 6,
-        "title": "Optimize API performance",
-        "description": "Improve FastAPI response times and optimize database queries.",
-        "priority": "high",
+        "title": "Optimize ",
+        "description": "Improve response times",
+        "priority": "low",
         "dueDate": "2025-03-25",
         "completed": false
     },
     {
         "id": 7,
-        "title": "Deploy FastAPI backend",
-        "description": "Deploy the backend on a cloud platform and set up a production database.",
+        "title": "Learn FastAPI backend",
+        "description": "learn the backend on render ",
         "priority": "high",
         "dueDate": "2025-03-28",
         "completed": false
     },
     {
         "id": 8,
-        "title": "Deploy React frontend",
-        "description": "Host the frontend on Vercel or a suitable platform.",
+        "title": "Deploy frontend",
+        "description": "Host the frontend ",
         "priority": "medium",
         "dueDate": "2025-03-30",
         "completed": false
     },
     {
-        "id": 9,
-        "title": "Write project documentation",
-        "description": "Document API endpoints, frontend features, and deployment instructions.",
+        "id": 10,
+        "title": "Update Figma",
+        "description": "",
+        "priority": "medium",
+        "dueDate": "2025-03-26",
+        "completed": true
+    },
+    {
+        "id": 11,
+        "title": "kkk",
+        "description": "",
         "priority": "low",
-        "dueDate": "2025-04-02",
+        "dueDate": "2025-03-19",
         "completed": false
     },
     {
-        "id": 10,
-        "title": "Conduct code review",
-        "description": "Review the codebase for potential improvements and ensure best practices.",
-        "priority": "medium",
-        "dueDate": "2025-03-26",
+        "id": 12,
+        "title": "PPT",
+        "description": "",
+        "priority": "high",
+        "dueDate": "2025-03-17",
         "completed": false
     }
 ]
