@@ -5,7 +5,7 @@
         "description": "Finish reading 'Atomic Habits'",
         "priority": "low",
         "dueDate": "2025-03-20",
-        "completed": true
+        "completed": false
     },
     {
         "id": 8,
@@ -13,7 +13,7 @@
         "description": "Resolve React state issues",
         "priority": "high",
         "dueDate": "2025-03-14",
-        "completed": true
+        "completed": false
     },
     {
         "id": 9,
@@ -29,7 +29,7 @@
         "description": "Upload the distributed systems assignment",
         "priority": "low",
         "dueDate": "2025-03-17",
-        "completed": false
+        "completed": true
     },
     {
         "id": 14,

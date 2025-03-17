@@ -4,8 +4,8 @@
 .App {
   display: flex;
   height: 100vh;
-  /* background-image: url('/src/taskManagerbg.jpg'); */
-  background-color: #f4e1c6  
+  background-image: url('/src/taskManagerbg.jpg');
+  /* background-color: #f4e1c6   */
 }
 
 /* Navbar (on the left) */
