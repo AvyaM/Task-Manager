@@ -14,7 +14,7 @@ function App() {
 
   // Fetch tasks from FastAPI when component mounts
   const fetchTasks = () => {
-    fetch("http://127.0.0.1:8000/tasks")
+    fetch( `${process.env.REACT_APP_API_URL}/tasks`)
       .then(response => response.json())
       .then(data => setTasks(data))
       .catch(error => alert("Error fetching tasks:", error));
@@ -41,7 +41,7 @@ function App() {
     const newId = tasks.length > 0 ? Math.max(...tasks.map(task => task.id)) + 1 : 1;
     const taskToSend = { ...newTask, id: newId, completed: false };
     
-    fetch("http://127.0.0.1:8000/tasks", {
+    fetch(`${process.env.REACT_APP_API_URL}/tasks`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(taskToSend)
@@ -59,7 +59,7 @@ function App() {
     const task = tasks.find(t => t.id === taskId);
     if (!task) return;
     const updatedTask = { ...task, completed: !task.completed };
-    fetch(`http://127.0.0.1:8000/tasks/${taskId}`, {
+    fetch(`${process.env.REACT_APP_API_URL}/tasks/${taskId}`, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(updatedTask)
@@ -73,7 +73,7 @@ function App() {
 
   // Delete task using FastAPI DELETE endpoint
   const handleDelete = (taskId) => {
-    fetch(`http://127.0.0.1:8000/tasks/${taskId}`, {
+    fetch(`${process.env.REACT_APP_API_URL}/tasks/${taskId}`, {
       method: "DELETE",
     })
       .then(() => {
@@ -84,7 +84,7 @@ function App() {
 
   // Save edited task via FastAPI PUT endpoint
   const handleSaveEditedTask = (updatedTask) => {
-    fetch(`http://127.0.0.1:8000/tasks/${updatedTask.id}`, {
+    fetch(`${process.env.REACT_APP_API_URL}/tasks/${updatedTask.id}`, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(updatedTask)
