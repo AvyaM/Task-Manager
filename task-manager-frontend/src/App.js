@@ -115,7 +115,7 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <NavBar onAddTask={handleAddTask} />
+        <NavBar />
 
         {showModal && <AddTask onAdd={handleNewTask} onClose={closeModal} />}
 

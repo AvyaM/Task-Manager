@@ -15,13 +15,12 @@ app.add_middleware(
 
 TASKS_FILE = "tasks.json"
 
-# Ensure tasks.json exists
+
 if not os.path.exists(TASKS_FILE):
     with open(TASKS_FILE, "w") as f:
         json.dump([], f)
 
 
-# Task Model
 class Task(BaseModel):
     id: int
     title: str
@@ -31,19 +30,16 @@ class Task(BaseModel):
     completed: bool
 
 
-# Load tasks from file
 def load_tasks():
     with open(TASKS_FILE, "r") as f:
         return json.load(f)
 
 
-# Save tasks to file
 def save_tasks(tasks):
     with open(TASKS_FILE, "w") as f:
         json.dump(tasks, f, indent=4)
 
 
-# API Routes
 
 @app.get("/")
 def root():

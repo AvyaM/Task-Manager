@@ -5,15 +5,12 @@ import { MdTimer } from "react-icons/md";
 import { Link } from 'react-router-dom';
 import './NavBar.css';  
 
-function NavBar({ onAddTask }) {
+function NavBar() {
   const [activeItem, setActiveItem] = useState('home');
   const [isOpen, setIsOpen] = useState(true);  
 
   const handleClick = (item) => {
     setActiveItem(item);
-    if (item === 'add task') {
-      onAddTask();
-    }
   };
 
   return (
