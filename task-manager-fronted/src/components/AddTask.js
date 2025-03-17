@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+
 import './AddTask.css';
 
 function AddTask({ onAdd, onClose }) {
+
   const navigate = useNavigate();
   const [task, setTask] = useState({
     title: "",
@@ -24,6 +26,7 @@ function AddTask({ onAdd, onClose }) {
       onAdd(task); 
       onClose();   
       navigate('/');
+      alert('Task added successfully')
     } else {
       alert("Please fill in all fields.");
     }
