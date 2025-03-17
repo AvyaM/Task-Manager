@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { FaHome, FaCheckCircle } from 'react-icons/fa';
-import { IoAddCircleOutline } from "react-icons/io5";
 import { IoMdMenu } from "react-icons/io";
 import { MdTimer } from "react-icons/md";
 import { Link } from 'react-router-dom';
@@ -53,13 +52,13 @@ function NavBar({ onAddTask }) {
           <span>Over Due</span>
         </Link>
 
-        <div
+        {/* <div
           className={`navbar-item ${activeItem === 'add task' ? 'active' : ''}`}
           onClick={() => handleClick('add task')}
         >
           <IoAddCircleOutline className="navbar-link-icon" />
           <span>Add Task</span>
-        </div>
+        </div> */}
       </div>
     </div>
   );

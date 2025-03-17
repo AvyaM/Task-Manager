@@ -1,98 +1,82 @@
 [
     {
-        "id": 6,
-        "title": "Read a book",
-        "description": "Finish reading 'Atomic Habits'",
-        "priority": "low",
-        "dueDate": "2025-03-20",
-        "completed": false
-    },
-    {
-        "id": 8,
-        "title": "Fix bugs in project ",
-        "description": "Resolve React state issues",
+        "id": 1,
+        "title": "Fix React state issues",
+        "description": "Investigate and resolve state management problems in the project.",
         "priority": "high",
         "dueDate": "2025-03-14",
         "completed": false
     },
     {
-        "id": 9,
-        "title": "Watch tutorial",
-        "description": "Learn about FastAPI deployment",
+        "id": 2,
+        "title": "Implement UI components",
+        "description": "Develop and style key UI components using React and Tailwind CSS.",
         "priority": "medium",
-        "dueDate": "2025-03-13",
-        "completed": true
+        "dueDate": "2025-03-18",
+        "completed": false
     },
     {
-        "id": 10,
-        "title": "Submit assignment",
-        "description": "Upload the distributed systems assignment",
-        "priority": "low",
-        "dueDate": "2025-03-17",
-        "completed": true
-    },
-    {
-        "id": 14,
-        "title": "Pay bills",
-        "description": "Electricity, water, and internet bills",
+        "id": 3,
+        "title": "Set up FastAPI backend",
+        "description": "Create API endpoints for authentication and data handling.",
         "priority": "high",
-        "dueDate": "2025-03-10",
+        "dueDate": "2025-03-20",
         "completed": false
     },
     {
-        "id": 15,
-        "title": "Hi",
-        "description": "",
-        "priority": "low",
-        "dueDate": "2025-03-16",
-        "completed": false
-    },
-    {
-        "id": 20,
-        "title": "Hey",
-        "description": "string",
-        "priority": "low",
-        "dueDate": "13/03/2025",
-        "completed": false
-    },
-    {
-        "id": 21,
-        "title": "kkk",
-        "description": "",
+        "id": 4,
+        "title": "Write unit tests",
+        "description": "Ensure backend and frontend functions have proper test coverage.",
         "priority": "medium",
-        "dueDate": "2025-03-17",
-        "completed": false
-    },
-    {
-        "id": 22,
-        "title": "jjj",
-        "description": "",
-        "priority": "low",
         "dueDate": "2025-03-22",
         "completed": false
     },
     {
-        "id": 23,
-        "title": "kkk",
-        "description": "",
-        "priority": "low",
-        "dueDate": "2025-03-19",
+        "id": 5,
+        "title": "Fix CORS issues",
+        "description": "Resolve cross-origin request issues between React and FastAPI.",
+        "priority": "high",
+        "dueDate": "2025-03-15",
         "completed": false
     },
     {
-        "id": 24,
-        "title": "kkk",
-        "description": "",
-        "priority": "low",
+        "id": 6,
+        "title": "Optimize API performance",
+        "description": "Improve FastAPI response times and optimize database queries.",
+        "priority": "high",
         "dueDate": "2025-03-25",
         "completed": false
     },
     {
-        "id": 25,
-        "title": "ss",
-        "description": "",
+        "id": 7,
+        "title": "Deploy FastAPI backend",
+        "description": "Deploy the backend on a cloud platform and set up a production database.",
+        "priority": "high",
+        "dueDate": "2025-03-28",
+        "completed": false
+    },
+    {
+        "id": 8,
+        "title": "Deploy React frontend",
+        "description": "Host the frontend on Vercel or a suitable platform.",
+        "priority": "medium",
+        "dueDate": "2025-03-30",
+        "completed": false
+    },
+    {
+        "id": 9,
+        "title": "Write project documentation",
+        "description": "Document API endpoints, frontend features, and deployment instructions.",
         "priority": "low",
-        "dueDate": "2025-04-04",
+        "dueDate": "2025-04-02",
+        "completed": false
+    },
+    {
+        "id": 10,
+        "title": "Conduct code review",
+        "description": "Review the codebase for potential improvements and ensure best practices.",
+        "priority": "medium",
+        "dueDate": "2025-03-26",
         "completed": false
     }
 ]

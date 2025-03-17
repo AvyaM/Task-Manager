@@ -2,13 +2,11 @@
 .App {
   display: flex;
   height: 100vh;
-  background-image: url('/src/taskManagerbg.jpg');
-  /* background-color: #f4e1c6   */
+  background: linear-gradient(to left, #F2E6D9, #B0C4DE, #a4b8d8d5);
 }
 
 .navbar {
   width: 200px;
-
   color: white;
   padding-top: 20px;
   padding-left: 20px;
@@ -80,25 +78,25 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;  
+  gap: 10px;  
   background-color: #5a7bb0; 
   color: white;
-  font-size: 16px;
+  font-size: 18px;  /* Increased font size */
   font-weight: bold;
-  padding: 10px 16px;
+  padding: 14px 22px; /* Increased padding */
   border: none;
-  border-radius: 50px;
+  border-radius: 60px; /* Increased border radius for a rounder look */
   cursor: pointer;
   transition: all 0.2s ease-in-out;
   position: fixed;
   bottom: 20px;
   right: 20px;
-  box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 4px 6px 14px rgba(0, 0, 0, 0.2); /* Slightly increased shadow */
 }
 
 .add-task-button:hover {
   background-color: #94a9ca;
-  transform: scale(1.05);
+  transform: scale(1.1); /* Increased hover scale */
 }
 
 .add-task-button:active {
@@ -107,6 +105,5 @@
 
 .add-task-button-icon {
   color: white;
-  font-size: 24px;
+  font-size: 30px; /* Increased icon size */
 }
-

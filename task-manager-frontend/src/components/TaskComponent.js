@@ -20,7 +20,7 @@ function TaskComponent({ task, onComplete, onDelete, onClick }) {
       <div className={`priority-circle ${priorityColor}`}></div>
       <div className="task-content">
         <h3 className="task-title">{task.title}</h3>
-        <p className="task-description" title={task.description}>
+        <p className="task-description"> {task.description}
         </p>
         <p className="task-due">{task.dueDate}</p>
       </div>

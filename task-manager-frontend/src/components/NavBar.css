@@ -26,7 +26,7 @@
 
 /* Sidebar Icon */
 .navbar-icon {
-  color: black;
+  color: white;
   font-size: 30px;
   margin-right: 10px;
   cursor: pointer;
@@ -63,7 +63,7 @@
   padding: 12px;
   margin: 10px 0;
   cursor: pointer;
-  color: black;
+  color: white;
   transition: background-color 0.3s ease, color 0.3s ease;
   border-radius: 8px;
   text-decoration: none;
@@ -94,6 +94,7 @@
 
 /* Ensure Icons Always Show in Collapsed Mode */
 .navbar.collapsed .navbar-link-icon {
-  margin-right: 0;
+  margin-right: 2px;
+  margin-left: 2px;
   font-size: 24px;
 }
