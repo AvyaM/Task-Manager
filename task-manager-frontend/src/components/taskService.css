@@ -1,18 +1,17 @@
-/* task-service-modal styles */
+
 .task-service-modal {
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    background-color: rgba(0, 0, 0, 0.5); 
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 1000; /* Make sure modal appears on top of other content */
+    z-index: 1000; 
   }
-  
-  /* Modal content container */
+
   .task-service-body {
     background-color: white;
     padding: 20px;
@@ -23,7 +22,6 @@
     margin: 20px;
   }
   
-  /* Header styles */
   .task-service-header {
     display: flex;
     justify-content: space-between;
@@ -37,7 +35,7 @@
   }
   
   .task-service-header button {
-    background-color: #f44336; /* Red color for the close button */
+    background-color: #f44336;
     color: white;
     border: none;
     padding: 10px 15px;
@@ -48,10 +46,10 @@
   }
   
   .task-service-header button:hover {
-    background-color: #d32f2f; /* Darker red on hover */
+    background-color: #d32f2f; 
   }
   
-  /* Task input fields */
+ 
   .task-detail {
     margin: 15px;
   }
@@ -89,7 +87,7 @@
   }
   
   .task-service-actions button {
-    background-color: #4caf50; /* Green color for save button */
+    background-color: #4caf50; 
     color: white;
     border: none;
     padding: 10px 15px;
@@ -100,14 +98,14 @@
   }
   
   .task-service-actions button:hover {
-    background-color: #388e3c; /* Darker green on hover */
+    background-color: #388e3c; 
   }
   
   .task-service-actions button:last-child {
-    background-color: #f44336; /* Red for cancel button */
+    background-color: #f44336; 
   }
   
   .task-service-actions button:last-child:hover {
-    background-color: #d32f2f; /* Darker red on hover */
+    background-color: #d32f2f; 
   }
   

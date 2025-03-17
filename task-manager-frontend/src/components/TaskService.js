@@ -13,8 +13,8 @@ function TaskService({ task, onClose, onSave }) {
   };
 
   const handleSave = () => {
-    onSave(editedTask); // Save the edited task and remarks
-    onClose(); // Close the modal after saving
+    onSave(editedTask); 
+    onClose(); 
   };
 
   return (

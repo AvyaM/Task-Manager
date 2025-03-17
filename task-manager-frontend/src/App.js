@@ -12,7 +12,6 @@ function App() {
   const [showModal, setShowModal] = useState(false);
   const [selectedTask, setSelectedTask] = useState(null);
 
-  // Fetch tasks from FastAPI when component mounts
   const fetchTasks = () => {
     fetch( `${process.env.REACT_APP_API_URL_LOCAL}/tasks`)
       .then(response => response.json())
@@ -36,7 +35,6 @@ function App() {
     setSelectedTask(task);
   };
 
-  // Add a new task using FastAPI POST endpoint
   const handleNewTask = (newTask) => {
     const newId = tasks.length > 0 ? Math.max(...tasks.map(task => task.id)) + 1 : 1;
     const taskToSend = { ...newTask, id: newId, completed: false };
@@ -54,7 +52,6 @@ function App() {
       .catch(error => alert("Error adding task:", error));
   };
 
-  // Toggle task completed status via FastAPI PUT endpoint
   const handleComplete = (taskId) => {
     const task = tasks.find(t => t.id === taskId);
     if (!task) return;
@@ -71,7 +68,6 @@ function App() {
       .catch(error => alert("Error updating task:", error));
   };
 
-  // Delete task using FastAPI DELETE endpoint
   const handleDelete = (taskId) => {
     fetch(`${process.env.REACT_APP_API_URL_LOCAL}/tasks/${taskId}`, {
       method: "DELETE",
@@ -83,7 +79,6 @@ function App() {
       alert("Delete Successfully")
   };
 
-  // Save edited task via FastAPI PUT endpoint
   const handleSaveEditedTask = (updatedTask) => {
     fetch(`${process.env.REACT_APP_API_URL_LOCAL}/tasks/${updatedTask.id}`, {
       method: "PUT",

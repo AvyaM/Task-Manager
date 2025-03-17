@@ -3,11 +3,11 @@ import { FaHome, FaCheckCircle } from 'react-icons/fa';
 import { IoMdMenu } from "react-icons/io";
 import { MdTimer } from "react-icons/md";
 import { Link } from 'react-router-dom';
-import './NavBar.css';  // Import the updated CSS file
+import './NavBar.css';  
 
 function NavBar({ onAddTask }) {
   const [activeItem, setActiveItem] = useState('home');
-  const [isOpen, setIsOpen] = useState(true);  // Toggle menu state
+  const [isOpen, setIsOpen] = useState(true);  
 
   const handleClick = (item) => {
     setActiveItem(item);
@@ -18,7 +18,7 @@ function NavBar({ onAddTask }) {
 
   return (
     <div className={`navbar ${isOpen ? 'open' : 'collapsed'}`}>
-      {/* Always Visible Menu Button */}
+      
       <div className="menu-button" onClick={() => setIsOpen(!isOpen)}>
         <IoMdMenu className="navbar-icon" />
       </div>
@@ -51,14 +51,6 @@ function NavBar({ onAddTask }) {
           <MdTimer className="navbar-link-icon" />
           <span>Over Due</span>
         </Link>
-
-        {/* <div
-          className={`navbar-item ${activeItem === 'add task' ? 'active' : ''}`}
-          onClick={() => handleClick('add task')}
-        >
-          <IoAddCircleOutline className="navbar-link-icon" />
-          <span>Add Task</span>
-        </div> */}
       </div>
     </div>
   );

@@ -81,22 +81,22 @@
   gap: 10px;  
   background-color: #5a7bb0; 
   color: white;
-  font-size: 18px;  /* Increased font size */
+  font-size: 18px;  
   font-weight: bold;
-  padding: 14px 22px; /* Increased padding */
+  padding: 14px 22px; 
   border: none;
-  border-radius: 60px; /* Increased border radius for a rounder look */
+  border-radius: 60px; 
   cursor: pointer;
   transition: all 0.2s ease-in-out;
   position: fixed;
   bottom: 20px;
   right: 20px;
-  box-shadow: 4px 6px 14px rgba(0, 0, 0, 0.2); /* Slightly increased shadow */
+  box-shadow: 4px 6px 14px rgba(0, 0, 0, 0.2); 
 }
 
 .add-task-button:hover {
   background-color: #94a9ca;
-  transform: scale(1.1); /* Increased hover scale */
+  transform: scale(1.1); 
 }
 
 .add-task-button:active {
@@ -105,5 +105,5 @@
 
 .add-task-button-icon {
   color: white;
-  font-size: 30px; /* Increased icon size */
+  font-size: 30px; 
 }
