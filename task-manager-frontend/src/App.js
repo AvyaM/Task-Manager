@@ -36,9 +36,21 @@ function App() {
   };
 
   const handleNewTask = (newTask) => {
+    // Check if a task with the same title, dueDate, and priority exists
+    const isDuplicate = tasks.some(task => 
+      task.title === newTask.title &&
+      task.dueDate === newTask.dueDate &&
+      task.priority === newTask.priority
+    );
+  
+    if (isDuplicate) {
+      alert("A task with the same name, date, and priority already exists!");
+      return;
+    }
+  
     const newId = tasks.length > 0 ? Math.max(...tasks.map(task => task.id)) + 1 : 1;
     const taskToSend = { ...newTask, id: newId, completed: false };
-    
+  
     fetch(`${process.env.REACT_APP_API_URL_LOCAL}/tasks`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -48,9 +60,13 @@ function App() {
       .then(data => {
         setTasks(prevTasks => [...prevTasks, data]);
         closeModal();
+        alert('Task added successfully')
       })
       .catch(error => alert("Error adding task:", error));
+
+      
   };
+  
 
   const handleComplete = (taskId) => {
     const task = tasks.find(t => t.id === taskId);
@@ -69,15 +85,20 @@ function App() {
   };
 
   const handleDelete = (taskId) => {
+    const confirmDelete = window.confirm("Are you sure you want to delete this task?");
+    
+    if (!confirmDelete) return; 
+  
     fetch(`${process.env.REACT_APP_API_URL_LOCAL}/tasks/${taskId}`, {
       method: "DELETE",
     })
       .then(() => {
         setTasks(prevTasks => prevTasks.filter(t => t.id !== taskId));
+        alert("Deleted Successfully");
       })
       .catch(error => alert("Error deleting task:", error));
-      alert("Delete Successfully")
   };
+  
 
   const handleSaveEditedTask = (updatedTask) => {
     fetch(`${process.env.REACT_APP_API_URL_LOCAL}/tasks/${updatedTask.id}`, {
@@ -89,10 +110,11 @@ function App() {
       .then(data => {
         setTasks(prevTasks => prevTasks.map(t => t.id === data.id ? data : t));
         setSelectedTask(null);
+        alert("Edit Successfully")
       })
       .catch(error => alert("Error editing task:", error));
 
-      alert("Edit Successfully")
+      
   };
 
   // Date calculations for filtering tasks
@@ -141,14 +163,14 @@ function App() {
                     onClick={handleTaskClick}
                   />
                   <TaskList
-                    name="Due within a week"
+                    name="Due within a Week"
                     tasks={dueWithinWeekTasks}
                     onComplete={handleComplete}
                     onDelete={handleDelete}
                     onClick={handleTaskClick}
                   />
                   <TaskList
-                    name="Due later"
+                    name="Due Later"
                     tasks={dueLaterTasks}
                     onComplete={handleComplete}
                     onDelete={handleDelete}

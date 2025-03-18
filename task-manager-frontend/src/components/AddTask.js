@@ -25,7 +25,6 @@ function AddTask({ onAdd, onClose }) {
       onAdd(task); 
       onClose();   
       navigate('/');
-      alert('Task added successfully')
     } else {
       alert("Please fill in all fields.");
     }

@@ -1,5 +1,6 @@
 import React from "react";
 import TaskComponent from "./TaskComponent";
+import './TaskList.css'
 
 function TaskList({ name, tasks, onComplete, onDelete, onClick }) {
 

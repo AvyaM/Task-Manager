@@ -5,15 +5,7 @@
         "description": "resolve problems in the project.",
         "priority": "high",
         "dueDate": "2025-03-14",
-        "completed": false
-    },
-    {
-        "id": 2,
-        "title": "Implement UI",
-        "description": "style UI components ",
-        "priority": "medium",
-        "dueDate": "2025-03-18",
-        "completed": false
+        "completed": true
     },
     {
         "id": 3,
@@ -21,7 +13,7 @@
         "description": "Create API endpoints ",
         "priority": "high",
         "dueDate": "2025-03-20",
-        "completed": false
+        "completed": true
     },
     {
         "id": 5,
@@ -56,36 +48,12 @@
         "completed": false
     },
     {
-        "id": 10,
-        "title": "Update Figma",
-        "description": "",
-        "priority": "medium",
-        "dueDate": "2025-03-26",
-        "completed": true
-    },
-    {
-        "id": 11,
-        "title": "kkk",
-        "description": "",
-        "priority": "low",
-        "dueDate": "2025-03-19",
-        "completed": false
-    },
-    {
-        "id": 12,
-        "title": "PPT",
-        "description": "",
-        "priority": "high",
-        "dueDate": "2025-03-17",
-        "completed": false
-    },
-    {
         "id": 13,
         "title": "Implement UX",
         "description": "style UI components ",
         "priority": "medium",
         "dueDate": "2025-03-18",
-        "completed": true
+        "completed": false
     },
     {
         "id": 14,
@@ -109,6 +77,38 @@
         "description": "",
         "priority": "medium",
         "dueDate": "2025-03-17",
+        "completed": false
+    },
+    {
+        "id": 18,
+        "title": "Clean room",
+        "description": "",
+        "priority": "medium",
+        "dueDate": "2025-03-17",
+        "completed": false
+    },
+    {
+        "id": 19,
+        "title": "ss",
+        "description": "",
+        "priority": "low",
+        "dueDate": "2025-03-18",
+        "completed": false
+    },
+    {
+        "id": 20,
+        "title": "backend",
+        "description": "",
+        "priority": "low",
+        "dueDate": "2025-03-29",
+        "completed": false
+    },
+    {
+        "id": 21,
+        "title": "jjj",
+        "description": "",
+        "priority": "low",
+        "dueDate": "2025-03-28",
         "completed": false
     }
 ]
