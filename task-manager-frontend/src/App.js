@@ -61,6 +61,7 @@ function App() {
         setTasks(prevTasks => [...prevTasks, data]);
         closeModal();
         alert('Task added successfully')
+        fetchTasks();
       })
       .catch(error => alert("Error adding task:", error));
 
@@ -86,7 +87,6 @@ function App() {
 
   const handleDelete = (taskId) => {
     const confirmDelete = window.confirm("Are you sure you want to delete this task?");
-    
     if (!confirmDelete) return; 
   
     fetch(`${process.env.REACT_APP_API_URL_LOCAL}/tasks/${taskId}`, {
@@ -111,6 +111,7 @@ function App() {
         setTasks(prevTasks => prevTasks.map(t => t.id === data.id ? data : t));
         setSelectedTask(null);
         alert("Edit Successfully")
+        fetchTasks();
       })
       .catch(error => alert("Error editing task:", error));
 

@@ -1,80 +1,113 @@
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
-import json
-import os
+import psycopg2
+from typing import List
 
+# FastAPI instance
 app = FastAPI()
 
+# CORS Configuration
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"], 
-    allow_methods=["*"],  
-    allow_headers=["*"], 
+    allow_origins=["*"],
+    allow_methods=["*"],
+    allow_headers=["*"],
 )
 
-TASKS_FILE = "tasks.json"
+# PostgreSQL Configuration
+DATABASE_URL = "postgresql://training6:training6@ai-training-db.c8qwljqpukqy.us-east-1.rds.amazonaws.com/test"
 
+TABLE_NAME = "taskmanager_avya"
 
-if not os.path.exists(TASKS_FILE):
-    with open(TASKS_FILE, "w") as f:
-        json.dump([], f)
+# Function to get DB connection
+def get_db_connection():
+    return psycopg2.connect(DATABASE_URL)
 
-
+# Pydantic Model for Task
 class Task(BaseModel):
-    id: int
     title: str
     description: str
     priority: str
     dueDate: str
-    completed: bool
+    completed: bool = False
 
-
-def load_tasks():
-    with open(TASKS_FILE, "r") as f:
-        return json.load(f)
-
-
-def save_tasks(tasks):
-    with open(TASKS_FILE, "w") as f:
-        json.dump(tasks, f, indent=4)
-
-
-
+# Root Endpoint
 @app.get("/")
 def root():
-    return {"message": "FastAPI Task Manager is running!"}
+    return {"message": "FastAPI Task Manager with PostgreSQL (test schema) is running!"}
 
-
+# Fetch All Tasks
 @app.get("/tasks")
 def get_tasks():
-    return load_tasks()
+    conn = get_db_connection()
+    cur = conn.cursor()
+    
+    cur.execute(f'SELECT id, title, description, priority, dueDate, completed FROM {TABLE_NAME}')
+    tasks = cur.fetchall()
+    
+    cur.close()
+    conn.close()
+    return [
+        {"id": row[0], "title": row[1], "description": row[2], "priority": row[3], "dueDate": row[4], "completed": row[5]}
+        for row in tasks
+    ]
 
-
+# Add a New Task
 @app.post("/tasks")
 def add_task(task: Task):
-    tasks = load_tasks()
-    if any(t["id"] == task.id for t in tasks):
-        raise HTTPException(status_code=400, detail="Task ID already exists")
-    tasks.append(task.dict())
-    save_tasks(tasks)
-    return task
+    conn = get_db_connection()
+    cur = conn.cursor()
+    
+    cur.execute(
+        f'INSERT INTO {TABLE_NAME} (title, description, priority, dueDate, completed) VALUES (%s, %s, %s, %s, %s) RETURNING id',
+        (task.title, task.description, task.priority, task.dueDate, task.completed)
+    )
+    task_id = cur.fetchone()[0]
+    
+    conn.commit()
+    cur.close()
+    conn.close()
+    
+    return {"id": task_id, "message": "Task added successfully"}
 
-
+# Update a Task
 @app.put("/tasks/{task_id}")
 def update_task(task_id: int, updated_task: Task):
-    tasks = load_tasks()
-    for i, task in enumerate(tasks):
-        if task["id"] == task_id:
-            tasks[i] = updated_task.dict()
-            save_tasks(tasks)
-            return updated_task
-    raise HTTPException(status_code=404, detail="Task not found")
+    conn = get_db_connection()
+    cur = conn.cursor()
+    
+    cur.execute(
+        f'UPDATE {TABLE_NAME} SET title = %s, description = %s, priority = %s, dueDate = %s, completed = %s WHERE id = %s',
+        (updated_task.title, updated_task.description, updated_task.priority, updated_task.dueDate, updated_task.completed, task_id)
+    )
+    
+    if cur.rowcount == 0:
+        cur.close()
+        conn.close()
+        raise HTTPException(status_code=404, detail="Task not found")
+    
+    conn.commit()
+    cur.close()
+    conn.close()
+    
+    return {"message": "Task updated successfully"}
 
-
+# Delete a Task
 @app.delete("/tasks/{task_id}")
 def delete_task(task_id: int):
-    tasks = load_tasks()
-    tasks = [task for task in tasks if task["id"] != task_id]
-    save_tasks(tasks)
+    conn = get_db_connection()
+    cur = conn.cursor()
+    
+    cur.execute(f'DELETE FROM {TABLE_NAME} WHERE id = %s', (task_id,))
+    
+    if cur.rowcount == 0:
+        cur.close()
+        conn.close()
+        raise HTTPException(status_code=404, detail="Task not found")
+    
+    conn.commit()
+    cur.close()
+    conn.close()
+    
     return {"message": "Task deleted successfully"}
